@@ -2,12 +2,13 @@
 namespace syships\qiniu;
 
 use Qiniu\Auth;
+use yii\base\Component;
 use yii\base\InvalidConfigException;
 
 /**
  * 
  */
-class Application
+class Application extends Component
 {
     public $accessKey;
 
