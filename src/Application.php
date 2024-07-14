@@ -16,7 +16,7 @@ class Application extends Component
 
     public $options;
 
-    public function __construct()
+    public function init()
     {
         if ($this->accessKey === null) {
             throw new InvalidConfigException('Qiniu::accessKey must be set.');
