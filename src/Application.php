@@ -15,17 +15,14 @@ class Application
 
     public $options;
 
-    public function init()
+    public function __construct()
     {
-        parent::init();
-
         if ($this->accessKey === null) {
             throw new InvalidConfigException('Qiniu::accessKey must be set.');
         }
         if ($this->secretKey === null) {
             throw new InvalidConfigException('Qiniu::secretKey must be set.');
         }
-
     }
 
     /**
