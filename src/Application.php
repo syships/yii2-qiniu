@@ -18,6 +18,7 @@ class Application extends Component
 
     public function init()
     {
+        parent::init();
         if ($this->accessKey === null) {
             throw new InvalidConfigException('Qiniu::accessKey must be set.');
         }
