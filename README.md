@@ -44,6 +44,14 @@ config：
 
 You can use the code below：
 
-Yii::$app->qiniu->Auth();
+    use Qiniu\Storage\UploadManager;
+    use Yii;
+    use yii\web\UploadedFile;
+    
+    $image = UploadedFile::getInstanceByName('image');
+    $fileName = 'image_' . time() .rand(1000,9999). '.' . $image->getExtension();
+    $upToken = Yii::$app->qiniu->Auth()->uploadToken("syships-imgs");
+    $uploadMgr = new UploadManager();
+    list($result, $error) = $uploadMgr->putFile($upToken, $fileName, $image->tempName);
 
 
